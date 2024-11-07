@@ -9,7 +9,7 @@ headers = {
 }
 
 url = "http://www.baidu.com"
-request = urllib.request.Request(url = url, headers=headers)
+request = urllib.request.Request(url=url, headers=headers)
 response = urllib.request.urlopen(request)
 # 获取html内容
 html = response.read().decode("utf-8")
@@ -18,4 +18,4 @@ html = response.read().decode("utf-8")
 tree = lxml.etree.HTML(html)
 # 获取到的是一个列表，可以使用下标取值
 result = tree.xpath("//input[@id='su']/@value")
-print(result[0]) # 百度一下
+print(result[0])  # 百度一下
