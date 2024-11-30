@@ -1,4 +1,5 @@
 import urllib.request
+import urllib.parse
 import lxml.etree
 
 # 请求baidu，获得按钮中的百度一下
@@ -14,8 +15,16 @@ response = urllib.request.urlopen(request)
 # 获取html内容
 html = response.read().decode("utf-8")
 
+print(response.status)
+print(response.getheaders())
+print(response.getheader("Server"))
+
 # 使用 xpath 解析 html
 tree = lxml.etree.HTML(html)
 # 获取到的是一个列表，可以使用下标取值
 result = tree.xpath("//input[@id='su']/@value")
 print(result[0])  # 百度一
+
+
+data = urllib.parse.urlencode({"hello": "world"}).encode("utf-8")
+urllib.request.urlopen("http://httpbin.org/post", data=data)
