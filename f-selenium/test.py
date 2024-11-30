@@ -13,7 +13,7 @@ capabilities = dict(
     locale="US",
 )
 
-appium_server_url = "http://localhost:4723"
+appium_server_url = "https://google.com"
 
 
 class TestAppium(unittest.TestCase):
