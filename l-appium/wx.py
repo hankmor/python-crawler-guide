@@ -136,7 +136,7 @@ class Moments:
                 EC.presence_of_all_elements_located(
                     (
                         By.XPATH,
-                        '//androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.widget.RelativeLayout',
+                        "//androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.widget.RelativeLayout",
                     )
                 )
             )
@@ -170,13 +170,11 @@ class Moments:
                     print("tag name:", el.tag_name)
                     # if el.tag_name == "android.widget.RelativeLayout":
                     #     content = "android.widget.RelativeLayout"
-                        # content += self.try_read_content(el)
+                    # content += self.try_read_content(el)
                     # elif el.tag_name == "android.widget.LinearLayout":
                     #     content = "android.widget.LinearLayout"
                     try:
-                        el = el.find_element(
-                            By.XPATH, "/android.widget.FrameLayout"
-                        )
+                        el = el.find_element(By.XPATH, "/android.widget.FrameLayout")
                         content = "compose content"
                         content += self.try_read_content(el)
                     except NoSuchElementException:
@@ -200,7 +198,6 @@ class Moments:
                 print("nickname: %s" % nickname)
                 print("content: %s" % content)
                 print("date: %s" % date)
-
 
                 time.sleep(SCROLL_SLEEP_TIME)
 
